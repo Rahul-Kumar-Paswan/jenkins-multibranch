@@ -8,6 +8,11 @@ pipeline{
             }
         }
         stage("Build"){
+            /*when{
+                expression{
+                    BRANCH_NAME = 'master'
+                }
+            }*/
             steps{
                 echo "This is Build stage"
             }
@@ -24,12 +29,12 @@ pipeline{
         }
         stage("Prod"){
             steps{
-                echo1 "This is Prod stage"
+                echo "This is Prod stage"
             }
         }
     }
     post{
-        failure{
+        always{
             echo " testing always "
         }
 
