@@ -8,7 +8,7 @@ def testApp(){
 
 def deployApp(){
     echo "This is deploy stage"
-    echo "version ${VERSION}"
+    echo "version ${env.VERSION}"
 }
 
 def prodApp(){
