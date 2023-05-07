@@ -1,35 +1,36 @@
+df gv
+
 pipeline{
     agent any
+    environment{
+        NEW_VERSION = '1.3.0'
+    }
 
     stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-        stage("Build"){
-            /*when{
-                expression{
-                    BRANCH_NAME = 'master'
-                }
-            }*/
-            steps{
+        stage('Build') {
+            script{
+                gv.buildApp()
                 echo "This is Build stage"
             }
         }
         stage("Test"){
             steps{
-                echo "This is Test stage"
+                script{
+                    gv.testApp()
+                    echo "This is Test stage"
+                }
             }
         }
         stage("Deploy"){
-            steps{
-                echo "This is Deploy stage"
+            script{
+                gv.deployApp()
+                    echo "This is Deploy stage"
             }
         }
         stage("Prod"){
-            steps{
-                echo "This is Prod stage"
+            script{
+                gv.prodApp()
+                    echo "This is Production stage"
             }
         }
     }
