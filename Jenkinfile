@@ -20,17 +20,16 @@ pipeline{
         stage("Deploy"){
             steps{
                 echo "This is Deploy stage"
-                error 
             }
         }
         stage("Prod"){
             steps{
-                echo "This is Prod stage"
+                echo1 "This is Prod stage"
             }
         }
     }
     post{
-        failure{
+        always{
             echo " testing always "
         }
 
