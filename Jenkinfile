@@ -33,12 +33,7 @@ pipeline{
         always{
             echo " testing always "
         }
-        <!-- success{
-            echo " Success "
-        }
-        failure{
-            echo " Testing Failed "
-        } -->
+
     }
     
 }
