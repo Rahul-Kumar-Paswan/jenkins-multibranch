@@ -8,9 +8,11 @@ pipeline{
 
     stages {
         stage('Build') {
-            script{
-                gv.buildApp()
-                echo "This is Build stage"
+            steps{
+                script{
+                    gv.buildApp()
+                    echo "This is Build stage"
+                }
             }
         }
         stage("Test"){
@@ -22,15 +24,19 @@ pipeline{
             }
         }
         stage("Deploy"){
-            script{
-                gv.deployApp()
-                    echo "This is Deploy stage"
+            steps{
+                script{
+                    gv.deployApp()
+                        echo "This is Deploy stage"
+                }
             }
         }
         stage("Prod"){
-            script{
-                gv.prodApp()
-                    echo "This is Production stage"
+            steps{
+                script{
+                    gv.prodApp()
+                        echo "This is Production stage"
+                }
             }
         }
     }
