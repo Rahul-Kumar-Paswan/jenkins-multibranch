@@ -13,7 +13,7 @@ pipeline{
             }
         }
         stage("Test"){
-            steps{
+            steps{''
                 echo "This is Test stage"
             }
         }
@@ -26,6 +26,17 @@ pipeline{
             steps{
                 echo "This is Prod stage"
             }
+        }
+    }
+    post{
+        always{
+            echo " testing always "
+        }
+        success{
+            echo " Success always "
+        }
+        failure{
+            echo " Failure always "
         }
     }
     
