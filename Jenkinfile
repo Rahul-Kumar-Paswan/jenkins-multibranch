@@ -7,35 +7,26 @@ pipeline{
                 echo 'Hello World'
             }
         }
-    }
-    
-    stages{
         stage("Build"){
             steps{
                 echo "This is Build stage"
             }
         }
-    }
-
-    stages{
         stage("Test"){
             steps{
                 echo "This is Test stage"
             }
         }
-    }
-    stages{
         stage("Deploy"){
             steps{
                 echo "This is Deploy stage"
             }
         }
-    }
-    stages{
         stage("Prod"){
             steps{
                 echo "This is Prod stage"
             }
         }
     }
+    
 }
