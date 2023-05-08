@@ -1,4 +1,4 @@
-//
+
 def buildApp(){
     echo "This is Build stage"
 }
