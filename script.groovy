@@ -1,19 +1,19 @@
+def buildJar() {
+    echo "building the application..."
+    sh 'mvn package'
+} 
 
-def buildApp(){
-    echo "This is Build stage"
-}
+def buildImage() {
+    echo "building the docker image..."
+    withCredentials([usernamePassword(credentialsId: 'server-credentials', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+        sh 'docker build -t rahulkumarpaswan/demo-app:jma-1.0 .'
+        sh "echo $PASS | docker login -u $USER --password-stdin"
+        sh 'docker push rahulkumarpaswan/demo-app:jma-1.0'
+    }
+} 
 
-def testApp(){
-    echo "This is test stage"
-}
-
-def deployApp(){
-    echo "This is deploy stage"
-    echo "version ${env.VERSION}"
-}
-
-def prodApp(){
-    echo "This is Production stage"
-}
+def deployApp() {
+    echo 'deploying the application...'
+} 
 
 return this
