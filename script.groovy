@@ -2,6 +2,7 @@
 def buildApp(){
     echo "This is Build stage"
     echo "This is edited Build stage"
+    echo "This is again edited Build stage"
 }
 
 def testApp(){
