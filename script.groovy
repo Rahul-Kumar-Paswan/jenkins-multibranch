@@ -1,6 +1,7 @@
 
 def buildApp(){
     echo "This is Build stage in feature branch"
+    echo "This is Build stage in feature branch edited"
 }
 
 def testApp(){
